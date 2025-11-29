@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("networking-final")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6efdcc03d79ef6c166263edaf64a2a5514e5f737")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d9a8899a5096f40d190df886a8e56dcb7ba6567")]
 [assembly: System.Reflection.AssemblyProductAttribute("networking-final")]
 [assembly: System.Reflection.AssemblyTitleAttribute("networking-final")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

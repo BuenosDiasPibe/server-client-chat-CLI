@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/clumpl/Documentos/Programacion/server-client-chat-CLI/prueba/networking-final.csproj",
+      "projectUniqueName": "/home/clumpl/Documentos/server-client-chat-CLI/prueba/networking-final.csproj",
       "projectName": "networking-final",
-      "projectPath": "/home/clumpl/Documentos/Programacion/server-client-chat-CLI/prueba/networking-final.csproj",
+      "projectPath": "/home/clumpl/Documentos/server-client-chat-CLI/prueba/networking-final.csproj",
       "packagesPath": "/home/clumpl/.nuget/packages/",
-      "outputPath": "/home/clumpl/Documentos/Programacion/server-client-chat-CLI/prueba/obj/",
+      "outputPath": "/home/clumpl/Documentos/server-client-chat-CLI/prueba/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/clumpl/.nuget/NuGet/NuGet.Config"
