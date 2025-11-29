@@ -57,7 +57,7 @@ namespace ClientePrueba
                     if (bytesReceived > 0)
                     {
                         string message = Encoding.UTF8.GetString(buffer, 0, bytesReceived);
-                        Console.WriteLine(message);
+                        Console.WriteLine("\n"+message);
                     }
                 }
                 catch (SocketException)

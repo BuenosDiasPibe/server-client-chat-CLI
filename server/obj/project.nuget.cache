@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OmVxuA+ffiI=",
+  "dgSpecHash": "4e1L/LqggAE=",
   "success": true,
-  "projectFilePath": "/home/clumpl/Documentos/tarea/trabajo/server/server.csproj",
+  "projectFilePath": "/home/clumpl/Documentos/Programacion/server-client-chat-CLI/server/server.csproj",
   "expectedPackageFiles": [
     "/home/clumpl/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
   ],
