@@ -12,57 +12,62 @@ public class Server(UdpClient server, int port)
   public void Run()
   {
     Console.WriteLine($"Server started at port {port}");
+    StringBuilder messagess = new();
     while(true)
     {
-      IPEndPoint client = new(IPAddress.Any, 0);
-      byte[] data = server.Receive(ref client);
-      string command = Encoding.UTF8.GetString(data);
-      Console.WriteLine(command);
+        messagess.Clear();
 
-      if(!players.Contains(client))
-      {
-        players.Add(client);
-        Console.WriteLine("added new Clinet");
-      }
+        IPEndPoint client = new(IPAddress.Any, 0);
+        byte[] data = server.Receive(ref client);
+        string command = Encoding.UTF8.GetString(data);
+        Console.WriteLine(command);
 
-      StringBuilder messagess = new();
-      int commander = 0;
-      if(command.Contains('1'))
-      {
-        string a = command.Remove(0, 1);
-        strings.Add(a);
-        messagess.Append("added obejct");
-        commander = 1;
-      }else if(command.Contains('2'))
-      {
-        for(int i = 0; i < strings.Count; i++)
+        if(!players.Contains(client))
         {
-          messagess.Append($"{i}: {strings[i]}\n");
+            players.Add(client);
+            Console.WriteLine($"added new Clinet {client.Port}");
         }
-        commander = 2;
-      }
-      else{
-        messagess.Append(command);
-      }
 
-      byte[] message = Encoding.UTF8.GetBytes(messagess.ToString());
-      foreach(var p in players)
-      {
-        switch(commander)
+        int commander = 0;
+        if(command.Contains('1'))
         {
-          case 1:
-            if(p != client) continue;
-            server.Send(message, message.Length, p);
-            break;
-          case 2:
-            if(p != client) continue;
-            server.Send(message, message.Length, p);
-            break;
-          default:
-          server.Send(message, message.Length, p);
-            break;
+            string a = command.Remove(0, 1);
+            strings.Add(a);
+            messagess.Append("added obejct");
+            commander = 1;
+        }else if(command.Contains('2'))
+        {
+            for(int i = 0; i < strings.Count; i++)
+            {
+            messagess.Append($"{i++}: {strings[i]}\n");
+            }
+            commander = 2;
         }
-      }
+        else{
+            messagess.Append(command);
+        }
+
+        byte[] message = Encoding.UTF8.GetBytes(messagess.ToString());
+        foreach(var p in players)
+        {
+            switch(commander)
+            {
+                case 1:
+                    if(p.Port == client.Port)
+                    {
+                        server.Send(message, message.Length, p);
+                    }
+                    break;
+                case 2:
+                    if(p.Port == client.Port)
+                        server.Send(message, message.Length, p);
+                    break;
+                default:
+                    if(p.Port != client.Port)
+                        server.Send(message, message.Length, p);
+                    break;
+            }
+        }
     }
   }
 }

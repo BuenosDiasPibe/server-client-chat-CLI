@@ -14,6 +14,8 @@ public class Client(UdpClient client, int port)
         Console.WriteLine($"Conected to port {port}");
 
         Thread receptor = receptorTask(remote);
+        byte[] buffer = Encoding.UTF8.GetBytes("connected");
+        client.Send(buffer, buffer.Length, server);
         receptor.Start();
 
         Console.WriteLine("1. Add a new object to the list\n2. show the list");
